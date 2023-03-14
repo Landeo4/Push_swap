@@ -3,9 +3,14 @@ NAME	=	Push_Swap
 SRCS	=	srcs/main.c\
 			srcs/Libft/ft_isdigit.c\
 			srcs/Libft/ft_strlen.c\
+			srcs/Libft/ft_atoi.c\
+			srcs/Libft/ft_atol.c\
+			srcs/Libft/ft_putstr_fd.c\
 			srcs/Parsing/ft_verif_input.c\
 			srcs/Parsing/ft_verif_existing.c\
-
+			srcs/Parsing/ft_verif_duplicate.c\
+			srcs/Parsing/ft_verif_int.c\
+			srcs/Parsing/ft_parsing_manager.c\
 
 
 OBJS= $(SRCS:.c=.o)

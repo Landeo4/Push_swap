@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:47:19 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/03/11 15:19:50 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/14 16:05:15 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <unistd.h>
+#include <limits.h>
+#include <string.h>
 
 // =======================================================================
 //								Colors
@@ -64,6 +66,9 @@ List *ft_freeList(List *);
 
 int	ft_isdigit(int c);
 int	ft_strlen(char *s);
+int	ft_atoi(char *nptr);
+long	ft_atol(char *nptr);
+void	ft_putstr_fd(char *s, int fd);
 
 // =======================================================================
 //								Parsing 
@@ -71,6 +76,9 @@ int	ft_strlen(char *s);
 
 bool ft_verif_input(char **argv);
 bool ft_verif_existing(int argc);
+bool ft_verif_duplicate(char **argv);
+bool ft_verif_int(char *argv);
+bool ft_parsing_manager(int argc, char **argv);
 
 
 

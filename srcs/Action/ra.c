@@ -1,14 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   ra.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 19:26:04 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2023/03/15 14:00:48 by tpotilli         ###   ########.fr       */
+/*   Created: 2023/03/15 15:50:56 by tpotilli          #+#    #+#             */
+/*   Updated: 2023/03/15 16:04:18 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "push_swap.h"
 
@@ -21,22 +22,29 @@
 ** =====================================================
 ** =====================================================
 **
-** It will swap the first and the second number in the list a
+** It will shift every element one time up in list a
 */
 
-void sa(t_pile *s, t_pile *list_a)
+void ra(t_pile *list_a)
 {
 	int i;
-	t_pile *cur= list_a;
-	t_pile *prec = list_a;
+	int len;
+	t_pile *cur;
+	t_pile *prec;
+	t_pile *pile;
 
+	pile = ft_AddCell(list_a);
+	cur = list_a;
+	prec = list_a;
 	i = 0;
-	if (ft_len_list(s) < 2)
-		return (0);
-	if (ft_isEmptyList(s))
-		return (NULL);
-	prec = cur;
-	cur = cur->next;
-	prec->next = cur;
-	return (s);
+	len = ft_len_list(list_a);
+	while (i < len)
+	{
+		i++;
+		prec = cur;
+		cur = cur->next;
+	}
+	prec->next = pile;
+	pile->next = cur;
+	return (list_a);
 }

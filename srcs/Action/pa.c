@@ -1,54 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_List1.c                                         :+:      :+:    :+:   */
+/*   pa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/11 13:29:19 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2023/03/15 14:17:22 by tpotilli         ###   ########.fr       */
+/*   Created: 2023/03/15 14:05:00 by tpotilli          #+#    #+#             */
+/*   Updated: 2023/03/15 14:24:22 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_emptyList()
+void pa(t_pile *s, t_pile *list_a, t_pile *list_b)
 {
-	return (NULL);
+	ft_take_data(list_a);
 }
 
-List *ft_isEmptyList(List *s)
+void ft_take_data(t_pile *list_a)
 {
-	return (s = NULL);
+	int data;
+	data = ft_getAt(list_a, 0);
+	ft_test(list_a, data);
 }
 
-List *ft_addCell(List *s)
+void ft_test(t_pile *list_a, int data)
 {
-	List *cell = malloc(sizeof(cell));
-	if (!cell)
-		return (NULL);
-	cell = s->data;
-	cell = s->next;
+	ft_addnumber(list_a, data, 0);
 }
-
-List *freeList(List *s)
-{
-	List *tmp = NULL;
-	while (s)
-	{
-		tmp = s->next;
-		free(s);
-		s = tmp;
-	}
-	return (s);
-}
-
-void ft_printList(List *s)
-{
-	while (s)
-	{
-		printf("%d\n", s->data);
-		s = s->next;
-	}
-	printf("\n");
-}
+// faire une fonction pour recuperer ce qu'il y a dans b
+// puis le mettre dans a, pour ca il faut
+// une fonction pour cree des cases, une autre pour verifier la position

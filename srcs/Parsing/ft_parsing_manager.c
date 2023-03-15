@@ -6,13 +6,13 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:31:04 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/03/14 16:15:00 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/14 17:08:12 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-bool ft_parsing_manager(int argc, char **argv)
+int ft_parsing_manager(int argc, char **argv)
 {
 	int i;
 	char *buf;
@@ -25,7 +25,7 @@ bool ft_parsing_manager(int argc, char **argv)
 		if ((ft_verif_existing(argc)) == 0)
 		{
 			write(2, "put the ciment on the poto la bas\n", 35);
-			return (0);
+			return (2);
 		}
 		if ((ft_verif_input(argv)) == 0)
 		{

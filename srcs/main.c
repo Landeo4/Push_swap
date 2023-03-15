@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:14:19 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2023/03/14 16:04:47 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/14 17:29:23 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ int main(int argc, char **argv)
 		write(2, RESET, ft_strlen(RESET));
 	}
 }
-*/
-/*
+
 int main(int argc, char **argv)
 {
 	(void)argv;
@@ -35,8 +34,7 @@ int main(int argc, char **argv)
 		write(2, RESET, ft_strlen(RESET));
 	}
 }
-*/
-/*
+
 int main(int argc, char **argv)
 {
 	(void)argv;
@@ -47,8 +45,7 @@ int main(int argc, char **argv)
 		write(2, RESET, ft_strlen(RESET));
 	}
 }
-*/
-/*
+
 int main(int argc, char **argv)
 {
 	(void)argc;
@@ -60,9 +57,15 @@ int main(int argc, char **argv)
 	}
 }
 */
-
+/*
 int main(int argc, char **argv)
 {
 	ft_parsing_manager(argc, argv);
 	return (0);
+}
+*/
+int main(int argc, char **argv)
+{
+	sa(argv);
+	ft_printList(argv);
 }

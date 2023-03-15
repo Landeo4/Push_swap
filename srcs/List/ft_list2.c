@@ -3,27 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpotilli@student42.fr  <tpotilli@studen    +#+  +:+       +#+        */
+/*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:00:03 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2023/03/11 14:05:01 by tpotilli@st      ###   ########.fr       */
+/*   Updated: 2023/03/15 15:59:58 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-List *ft_Addnumber(List *L, int data, int pos)
+List *ft_Addnumber(List *s, int data, int pos)
 {
-	Cell *cur = L;
-	Cell *prec = L;
+	List *cur;
+	List *prec;
 	int i;
-	Cell *cell = ft_AddCell(L);
+	List *cell = ft_AddCell(s);
 	
-	if (ft_isEmptyList(L))
+	cur = s;
+	prec = s;
+	if (ft_isEmptyList(s))
 		return (cell);
 	if (pos == 0)
 	{
-		cell->next = L;
+		cell->next = s;
 		return (cell);
 	}
 	i = 0;
@@ -35,5 +37,34 @@ List *ft_Addnumber(List *L, int data, int pos)
 	}
 	prec->next = cell;
 	cell->next = cur;
-	return (L);
+	return (s);
+}
+
+int ft_len_list(List *s)
+{
+	long len = 0;
+	while(s)
+	{
+		len++;
+		s = s->next;
+	}
+	return (len);
+}
+
+int ft_getAt(t_pile *s, int pos)
+{
+	int i;
+
+	i = 0;
+	if (is_Emptylist(s))
+	{
+		write(1, "liste vide", 11);
+		return (0);
+	}
+	while (i < pos)
+	{
+		i++;
+		s = s->next;
+	}
+	return (s->data);
 }

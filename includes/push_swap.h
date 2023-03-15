@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:47:19 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/03/14 16:05:15 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/15 14:17:04 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,20 @@
 // =======================================================================
 //								list
 // =======================================================================
-
-typedef struct Cell_t
+/*
+typedef struct s_List
 {
 	int data;
 	struct Cell_t *next;
 }List, Cell;
+*/
+typedef struct s_pile
+{
+	List *pile_a;
+	List *pile_b;
+	int data;
+	struct s_pile *next;
+}	List, t_pile;
 
 // =======================================================================
 //								Function List
@@ -78,14 +86,18 @@ bool ft_verif_input(char **argv);
 bool ft_verif_existing(int argc);
 bool ft_verif_duplicate(char **argv);
 bool ft_verif_int(char *argv);
-bool ft_parsing_manager(int argc, char **argv);
+int ft_parsing_manager(int argc, char **argv);
 
 
 
+// =======================================================================
+//								actions
+// =======================================================================
 
-
-
-
+void sa(t_pile *s, t_pile *list_a);
+void sb(t_pile *s, t_pile *list_b);
+void ss(t_pile *s, t_pile *list_a, t_pile *list_b);
+void pa(t_pile *s, t_pile *list_a, t_pile *list_b);
 
 
 

@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:14:19 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2023/03/14 17:29:23 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/19 18:43:21 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,15 +57,30 @@ int main(int argc, char **argv)
 	}
 }
 */
-/*
+
 int main(int argc, char **argv)
 {
 	ft_parsing_manager(argc, argv);
 	return (0);
 }
-*/
-int main(int argc, char **argv)
+
+/*
+int main() 
 {
-	sa(argv);
-	ft_printList(argv);
+    t_pile *list_a = malloc(sizeof(t_pile));
+    list_a->data = 2;
+    list_a->next = malloc(sizeof(t_pile));
+    list_a->next->data = 1;
+    list_a->next->next = NULL;
+
+    printf("Before:\n");
+    ft_printList(list_a);
+
+    sa(list_a);
+
+    printf("After:\n");
+    ft_printList(list_a);
+
+    return 0;
 }
+*/

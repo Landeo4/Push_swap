@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 15:50:56 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/03/15 16:04:18 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/19 18:39:56 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ void ra(t_pile *list_a)
 	}
 	prec->next = pile;
 	pile->next = cur;
-	return (list_a);
+	//return (list_a);
 }

@@ -6,11 +6,14 @@ SRCS	=	srcs/main.c\
 			srcs/Libft/ft_atoi.c\
 			srcs/Libft/ft_atol.c\
 			srcs/Libft/ft_putstr_fd.c\
+			srcs/List/ft_list1.c\
+			srcs/List/ft_list2.c\
 			srcs/Parsing/ft_verif_input.c\
 			srcs/Parsing/ft_verif_existing.c\
 			srcs/Parsing/ft_verif_duplicate.c\
 			srcs/Parsing/ft_verif_int.c\
 			srcs/Parsing/ft_parsing_manager.c\
+			srcs/Action/sa.c\
 
 
 OBJS= $(SRCS:.c=.o)

@@ -6,13 +6,12 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:47:19 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/03/19 18:49:15 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/22 16:37:39 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 #define PUSH_SWAP_H
-
 
 // =======================================================================
 //								Includes
@@ -60,37 +59,37 @@ typedef struct s_pile
 // =======================================================================
 //								Function List
 // =======================================================================
-
+/*
 List *ft_emptyList();
-List *ft_isEmptyList(List *);
-void ft_printList(List *);
-List *ft_AddCell(List *);
-List *ft_Addnumber(List *, int, int);
-List *ft_freeList(List *);
-
+List *ft_isemptyList(List *s);
+void ft_printList(List *s);
+List *ft_AddCell(int data);
+List *ft_Addnumber(List *s, int, int);
+List *ft_freeList(List *s);
+*/
 // =======================================================================
 //								Libft
 // =======================================================================
 
-int	ft_isdigit(int c);
-int	ft_strlen(char *s);
-int	ft_atoi(char *nptr);
+int		ft_isdigit(int c);
+int		ft_strlen(char *s);
+int		ft_atoi(char *nptr);
 long	ft_atol(char *nptr);
 void	ft_putstr_fd(char *s, int fd);
 
-
 // =======================================================================
-//								Parsing 
+//								List function
 // =======================================================================
 
 List *ft_emptyList();
-List *ft_isEmptyList(List *s);
-List *ft_addCell(List *s);
+List *ft_isemptyList(List *s);
+List *ft_AddCell(int data);
 List *freeList(List *s);
 void ft_printList(List *s);
 List *ft_Addnumber(List *s, int data, int pos);
 int ft_len_list(List *s);
 int ft_getAt(t_pile *s, int pos);
+void ft_transform_arg(int argc, char **argv);
 
 // =======================================================================
 //								Parsing 

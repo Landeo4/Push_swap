@@ -18,9 +18,9 @@ SRCS	=	srcs/main.c\
 
 OBJS= $(SRCS:.c=.o)
 
-CC		=	gcc -g3
+CC		=	gcc
 
-CFLAGS	=	-Wall -Werror -Wextra
+CFLAGS	=	-Wall -Werror -Wextra -g3
 .c.o:
 		${CC} ${CFLAGS} -Iincludes -c $< -o ${<:.c=.o}
 

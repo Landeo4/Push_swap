@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 13:29:19 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2023/03/23 16:57:55 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/23 22:43:49 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@ List *ft_emptyList()
 	return (NULL);
 }
 
-int ft_isemptyList(List *s)
+bool ft_isemptyList(List *s)
 {
-    return (s == NULL);
+    if (s == NULL)
+		return (0);
+	return (1);
 }
 
 List *ft_AddCell(int data)

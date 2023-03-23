@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:00:03 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2023/03/23 16:16:31 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/23 22:47:08 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int ft_getAt(t_pile *s, int pos)
 	return (s->data);
 }
 
-List *ft_transform_arg(int argc, char **argv, List *pile_a)
+void ft_transform_arg(int argc, char **argv, List **pile_a)
 {
 	(void)argc;
 	int i;
@@ -84,8 +84,7 @@ List *ft_transform_arg(int argc, char **argv, List *pile_a)
 	while (argv[i])
 	{
 		result = ft_atoi(argv[i]);
-		pile_a = ft_Addnumber(pile_a, result, 1);
+		*pile_a = ft_Addnumber(*pile_a, result, 1);
 		i++;
 	}
-	return (pile_a);
 }

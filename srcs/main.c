@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:14:19 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2023/03/23 21:57:39 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/23 22:44:44 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ int main(int argc, char **argv)
 	List *pile_a;
 	
 	pile_a = ft_emptyList();
-	pile_a = ft_transform_arg(argc, argv, pile_a);
+	ft_transform_arg(argc, argv, &pile_a);
 	ft_printList(pile_a);
 	pile_a = sa(pile_a);
 	ft_printList(pile_a);

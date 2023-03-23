@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:00:03 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2023/03/22 16:31:31 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/22 19:11:47 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ List *ft_Addnumber(List *s, int data, int pos)
 	prec = s;
 	if (ft_isemptyList(s))
 		return (cell);
-	if (pos == 0)
+	if (pos <= 0)
 	{
 		cell->next = s;
 		return (cell);
@@ -70,15 +70,16 @@ int ft_getAt(t_pile *s, int pos)
 	return (s->data);
 }
 
-void ft_transform_arg(int argc, char **argv)
+void ft_transform_arg(int argc, char **argv, List *pile_a)
 {
 	int i;
-	List *list_a;
+	int result;
 
 	i = 0;
 	while (argv[i])
 	{
-		list_a = ft_Addnumber(list_a, ft_atoi(argv[i]), argc);
+		result = ft_atoi(argv[i]);
+		pile_a = ft_Addnumber(pile_a, result, argc);
 		i++;
 	}
 }

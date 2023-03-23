@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 13:29:19 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2023/03/22 16:11:28 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/22 19:17:09 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ List *ft_isemptyList(List *s)
 
 List *ft_AddCell(int data)
 {
-	List *cell = malloc(sizeof(cell));
+	List *cell = malloc(sizeof(List));
 	if (!cell)
 		return (NULL);
 	cell->data = data;

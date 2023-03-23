@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:47:19 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/03/22 16:37:39 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/22 18:55:57 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void ft_printList(List *s);
 List *ft_Addnumber(List *s, int data, int pos);
 int ft_len_list(List *s);
 int ft_getAt(t_pile *s, int pos);
-void ft_transform_arg(int argc, char **argv);
+void ft_transform_arg(int argc, char **argv, List *pile_a);
 
 // =======================================================================
 //								Parsing 

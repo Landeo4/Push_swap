@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 12:52:13 by tpotillion        #+#    #+#             */
-/*   Updated: 2023/03/13 13:51:35 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/22 18:22:03 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,9 @@ int	ft_atoi(char *nptr)
 	}
 	return (result * sign);
 }
-
-/*int main()
+/*
+int main()
 {
-	ft_atoi(NULL);
-}*/
+	printf("%d",ft_atoi("456"));
+}
+*/

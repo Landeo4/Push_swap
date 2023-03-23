@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:47:19 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/03/22 18:55:57 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/23 16:12:55 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,14 +82,14 @@ void	ft_putstr_fd(char *s, int fd);
 // =======================================================================
 
 List *ft_emptyList();
-List *ft_isemptyList(List *s);
+int	 ft_isemptyList(List *s);
 List *ft_AddCell(int data);
 List *freeList(List *s);
 void ft_printList(List *s);
 List *ft_Addnumber(List *s, int data, int pos);
 int ft_len_list(List *s);
 int ft_getAt(t_pile *s, int pos);
-void ft_transform_arg(int argc, char **argv, List *pile_a);
+List *ft_transform_arg(int argc, char **argv, List *pile_a);
 
 // =======================================================================
 //								Parsing 

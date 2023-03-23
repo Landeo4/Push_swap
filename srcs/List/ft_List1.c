@@ -6,20 +6,20 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 13:29:19 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2023/03/22 19:17:09 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/23 13:35:56 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-List * ft_emptyList()
+List *ft_emptyList()
 {
 	return (NULL);
 }
 
-List *ft_isemptyList(List *s)
+int ft_isemptyList(List *s)
 {
-	return (s = NULL);
+    return (s == NULL);
 }
 
 List *ft_AddCell(int data)

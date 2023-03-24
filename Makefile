@@ -20,7 +20,7 @@ OBJS= $(SRCS:.c=.o)
 
 CC		=	gcc
 
-CFLAGS	=	-Wall -Werror -Wextra -g3
+CFLAGS	=	-Wall -Werror -Wextra -g3 -g
 .c.o:
 		${CC} ${CFLAGS} -Iincludes -c $< -o ${<:.c=.o}
 

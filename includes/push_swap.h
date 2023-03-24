@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:47:19 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/03/23 22:44:56 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/24 11:30:10 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ typedef struct s_pile
 	struct s_pile *pile_b;
 	int data;
 	struct s_pile *next;
-}	List, t_pile;
+}	List, t_pile, Cell;
 
 // =======================================================================
 //								Function List
@@ -90,6 +90,7 @@ List *ft_Addnumber(List *s, int data, int pos);
 int ft_len_list(List *s);
 int ft_getAt(t_pile *s, int pos);
 void ft_transform_arg(int argc, char **argv, List **pile_a);
+void changeAt(List *s, int data, int pos);
 
 // =======================================================================
 //								Parsing 

@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:14:19 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2023/03/24 10:39:13 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/25 16:38:14 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,17 +84,49 @@ int main()
     return 0;
 }
 */
-
+/*
+pour faire le sa
 int main(int argc, char **argv)
 {
-	/*
-	printf("%d",ft_atoi(argv[i]));*/
-	List *pile_a;
+	(void)argc;
+	int i;
+	t_list_a *la;
 
-	pile_a = ft_emptyList();
-	ft_transform_arg(argc, argv, &pile_a);
-	ft_printList(pile_a);
-	pile_a = sa(pile_a);
-	ft_printList(pile_a);
+	la = NULL;
+	la = ft_first_la(la);
+	i = 1;
+	while (argv[i])
+	{
+		la = ft_addAt(la, ft_atoi(argv[i]), 1);
+		i++;
+	}
+	ft_print_list(la);
+	printf("\n");
+	sa(la);
+	ft_print_list(la);
+	ft_free_list(la);
+	return (0);
+}
+*/
+//pour faire le sb
+int main(int argc, char **argv)
+{
+	(void)argc;
+	int i;
+	t_list_b *la;
+
+	la = NULL;
+	la = ft_first_la(la);
+	i = 1;
+	while (argv[i])
+	{
+		la = ft_addAt(la, ft_atoi(argv[i]), 1);
+		i++;
+	}
+	ft_print_list(la);
+	printf("\n");
+	sb(la);
+	ft_print_list(la);
+	ft_free_list(la);
 	return (0);
 }

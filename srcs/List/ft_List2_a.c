@@ -1,33 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa.c                                               :+:      :+:    :+:   */
+/*   ft_List2_a.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 14:05:00 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/03/15 14:24:22 by tpotilli         ###   ########.fr       */
+/*   Created: 2023/03/11 14:00:03 by tpotilli@st       #+#    #+#             */
+/*   Updated: 2023/03/25 16:35:44 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void pa(t_pile *s, t_pile *list_a, t_pile *list_b)
+int ft_len_list(t_list_a *la)
 {
-	ft_take_data(list_a);
+	int len;
+
+	len = 0;
+	while (la)
+	{
+		len++;
+		la = la->next;
+	}
+	return (len);
 }
 
-void ft_take_data(t_pile *list_a)
+int ft_getAt(t_list_a *la, int pos)
 {
-	int data;
-	data = ft_getAt(list_a, 0);
-	ft_test(list_a, data);
-}
+	int i;
 
-void ft_test(t_pile *list_a, int data)
-{
-	ft_addnumber(list_a, data, 0);
+	i = 0;
+	if (la == NULL)
+	{
+		printf("liste vide\n");
+		return (-1);
+	}
+	while (i < pos)
+	{
+		i++;
+		la = la->next;
+	}
+	return (la->data);
 }
-// faire une fonction pour recuperer ce qu'il y a dans b
-// puis le mettre dans a, pour ca il faut
-// une fonction pour cree des cases, une autre pour verifier la position

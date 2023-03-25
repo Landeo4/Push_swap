@@ -1,0 +1,92 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_List1_a.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/11 13:29:19 by tpotilli@st       #+#    #+#             */
+/*   Updated: 2023/03/25 16:35:55 by tpotilli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+t_list_a *ft_createCell(int data)
+{
+	t_list_a *cell;
+	cell = malloc(sizeof(t_list_a));
+	if (!cell)
+		return (NULL);
+	cell->data = data;
+	cell->next = NULL;
+	return (cell);
+}
+
+t_list_a *ft_first_la(t_list_a *la)
+{
+	la = malloc(sizeof(t_list_a));
+	/*
+	if (!la)
+		return (NULL);*/
+	la->next = NULL;
+	return (la);
+}
+
+t_list_a *ft_addAt(t_list_a *la, int data, int pos)
+{
+	t_list_a *prec;
+	t_list_a *cur;
+	int i;
+	t_list_a *cell;
+
+	cell = ft_createCell(data);
+	prec = la;
+	cur = la;
+	if (la == NULL)
+		return (cell);
+	if (pos == 0)
+	{
+		cell->next = la;
+		return (cell);
+	}
+	i = 0;
+	while (i < pos)
+	{
+		i++;
+		prec = cur;
+		cur = cur->next;
+	}
+	prec->next = cell;
+	cell->next = cur;
+	return (la);
+}
+
+int ft_print_list(t_list_a *la)
+{
+	t_list_a *tmp;
+
+	tmp = la->next;
+	if (!tmp)
+		return (-1);
+	while (tmp)
+	{
+		printf("%d\n", tmp->data);
+		tmp = tmp->next;
+	}
+	return (1);
+}
+
+t_list_a *ft_free_list(t_list_a *la)
+{
+	t_list_a *tmp;
+
+	tmp = NULL;
+	while (la)
+	{
+		tmp = la->next;
+		free(la);
+		la = tmp;
+	}
+	return (la);
+}

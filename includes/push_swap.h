@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:47:19 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/03/24 11:30:10 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/25 16:37:37 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,32 +41,31 @@
 // =======================================================================
 //								list
 // =======================================================================
-/*
-typedef struct s_List
+
+typedef struct s_list_a
 {
 	int data;
-	struct Cell_t *next;
-}List, Cell;
-*/
-typedef struct s_pile
+	struct s_list_a *next;
+}	t_list_a;
+
+typedef struct s_list_b
 {
-	struct s_pile *pile_a;
-	struct s_pile *pile_b;
 	int data;
-	struct s_pile *next;
-}	List, t_pile, Cell;
+	struct s_list_b *next;
+}	t_list_b;
 
 // =======================================================================
 //								Function List
 // =======================================================================
-/*
-List *ft_emptyList();
-List *ft_isemptyList(List *s);
-void ft_printList(List *s);
-List *ft_AddCell(int data);
-List *ft_Addnumber(List *s, int, int);
-List *ft_freeList(List *s);
-*/
+
+t_list_a *ft_createCell(int data);
+t_list_a *ft_first_la(t_list_a *la);
+t_list_a *ft_addAt(t_list_a *la, int data, int pos);
+int ft_print_list(t_list_a *la);
+t_list_a *ft_free_list(t_list_a *la);
+int ft_len_list(t_list_a *la);
+int ft_getAt(t_list_a *la, int pos);
+
 // =======================================================================
 //								Libft
 // =======================================================================
@@ -76,21 +75,6 @@ int		ft_strlen(char *s);
 int		ft_atoi(char *nptr);
 long	ft_atol(char *nptr);
 void	ft_putstr_fd(char *s, int fd);
-
-// =======================================================================
-//								List function
-// =======================================================================
-
-List *ft_emptyList();
-bool ft_isemptyList(List *s);
-List *ft_AddCell(int data);
-List *freeList(List *s);
-void ft_printList(List *s);
-List *ft_Addnumber(List *s, int data, int pos);
-int ft_len_list(List *s);
-int ft_getAt(t_pile *s, int pos);
-void ft_transform_arg(int argc, char **argv, List **pile_a);
-void changeAt(List *s, int data, int pos);
 
 // =======================================================================
 //								Parsing 
@@ -106,22 +90,10 @@ int ft_parsing_manager(int argc, char **argv);
 //								actions
 // =======================================================================
 
-List *sa(t_pile *list_a);
-void sb(t_pile *list_b);
-void ss(t_pile *s, t_pile *list_a, t_pile *list_b);
-void pa(t_pile *s, t_pile *list_a, t_pile *list_b);
+t_list_a *sa(t_list_a *la);
+t_list_b *sb(t_list_b *lb);
 
-
-
-int	ft_search(List *list_a, int pos);
-
-
-
-
-
-
-
-void push_swap(List *);
+void push_swap(t_list_a *);
 void ft_error();
 
 #endif

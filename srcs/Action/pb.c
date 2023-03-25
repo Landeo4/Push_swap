@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sb.c                                               :+:      :+:    :+:   */
+/*   pb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/25 16:29:04 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/03/25 18:36:18 by tpotilli         ###   ########.fr       */
+/*   Created: 2023/03/25 19:07:26 by tpotilli          #+#    #+#             */
+/*   Updated: 2023/03/25 19:08:11 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,25 @@
 /*
 **	This function takes as parameter: 
 **
-**	t_list_b the name of the struct
+**	t_list_a the name of the struct
 **
-**	t_list_b : name of the list b
+**	la : name of the list a
 ** =====================================================
 ** =====================================================
 **
-** It will swap the first and the second number in the list b
+** take the first element on the top of b and put it in top a
+** prend le premier element en haut de b et le met en haut de a
 */
 
-t_list_b *sb(t_list_b *lb)
+t_list_b *pb(t_list_a *la, t_list_b *lb)
 {
-	int tmp1;
-	t_list_b *first;
+	t_list_a *firsta;
+	t_list_b *firstb;
+	int tmpb;
 
-	first = lb->next;
-	tmp1 = first->data;
-	first->data = first->next->data;
-	first->next->data = tmp1;
-
-	return (first);
+	firsta = la;
+	firstb = lb;
+	tmpb = firstb->data;
+	ft_addAta(firsta, tmpb, 1);
+	return (firstb);
 }

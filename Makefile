@@ -17,6 +17,9 @@ SRCS	=	srcs/main.c\
 			srcs/Parsing/ft_parsing_manager.c\
 			srcs/Action/sa.c\
 			srcs/Action/sb.c\
+			srcs/Action/pa.c\
+			srcs/Action/pb.c\
+
 
 
 OBJS= $(SRCS:.c=.o)

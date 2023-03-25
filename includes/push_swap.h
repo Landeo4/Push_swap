@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:47:19 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/03/25 18:13:44 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/25 19:08:19 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,9 @@ int ft_parsing_manager(int argc, char **argv);
 
 t_list_a *sa(t_list_a *la);
 t_list_b *sb(t_list_b *lb);
+void ss(t_list_a *la, t_list_b *lb);
+t_list_a *pa(t_list_a *la, t_list_b *lb);
+t_list_b *pb(t_list_a *la, t_list_b *lb);
 
 void push_swap(t_list_a *);
 void ft_error();

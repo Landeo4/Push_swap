@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 19:26:04 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2023/03/25 16:26:40 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/25 18:36:33 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 /*
 **	This function takes as parameter: 
 **
-**	t_pile *s the name of the struct
+**	t_list_a the name of the struct
 **
-**	t_pile *list_a : name of the first list
+**	t_list_ba : name of the list a
 ** =====================================================
 ** =====================================================
 **

@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_List1_a.c                                       :+:      :+:    :+:   */
+/*   ft_List1_b.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/11 13:29:19 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2023/03/25 18:27:06 by tpotilli         ###   ########.fr       */
+/*   Created: 2023/03/25 16:27:53 by tpotilli          #+#    #+#             */
+/*   Updated: 2023/03/25 18:03:32 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list_a *ft_createCella(int data)
+t_list_b *ft_createCellb(int data)
 {
-	t_list_a *cell;
-	cell = malloc(sizeof(t_list_a));
+	t_list_b *cell;
+	cell = malloc(sizeof(t_list_b));
 	if (!cell)
 		return (NULL);
 	cell->data = data;
@@ -23,31 +23,31 @@ t_list_a *ft_createCella(int data)
 	return (cell);
 }
 
-t_list_a *ft_first_la(t_list_a *la)
+t_list_b *ft_first_lb(t_list_b *lb)
 {
-	la = malloc(sizeof(t_list_a));
+	lb = malloc(sizeof(t_list_b));
 	/*
-	if (!la)
+	if (!lb)
 		return (NULL);*/
-	la->next = NULL;
-	return (la);
+	lb->next = NULL;
+	return (lb);
 }
 
-t_list_a *ft_addAta(t_list_a *la, int data, int pos)
+t_list_b *ft_addAtb(t_list_b *lb, int data, int pos)
 {
-	t_list_a *prec;
-	t_list_a *cur;
+	t_list_b *prec;
+	t_list_b *cur;
 	int i;
-	t_list_a *cell;
+	t_list_b *cell;
 
-	cell = ft_createCella(data);
-	prec = la;
-	cur = la;
-	if (la == NULL)
+	cell = ft_createCellb(data);
+	prec = lb;
+	cur = lb;
+	if (lb == NULL)
 		return (cell);
 	if (pos == 0)
 	{
-		cell->next = la;
+		cell->next = lb;
 		return (cell);
 	}
 	i = 0;
@@ -59,14 +59,14 @@ t_list_a *ft_addAta(t_list_a *la, int data, int pos)
 	}
 	prec->next = cell;
 	cell->next = cur;
-	return (la);
+	return (lb);
 }
 
-int ft_print_lista(t_list_a *la)
+int ft_print_listb(t_list_b *lb)
 {
-	t_list_a *tmp;
+	t_list_b *tmp;
 
-	tmp = la->next;
+	tmp = lb->next;
 	if (!tmp)
 		return (-1);
 	while (tmp)
@@ -77,17 +77,16 @@ int ft_print_lista(t_list_a *la)
 	return (1);
 }
 
-t_list_a *ft_free_lista(t_list_a *la)
+t_list_b *ft_free_listb(t_list_b *lb)
 {
-	t_list_a *tmp;
+	t_list_b *tmp;
 
 	tmp = NULL;
-	while (la)
+	while (lb)
 	{
-		tmp = la->next;
-		free(la);
-		la = tmp;
+		tmp = lb->next;
+		free(lb);
+		lb = tmp;
 	}
-	return (la);
+	return (lb);
 }
-

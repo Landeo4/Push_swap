@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 18:34:29 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/03/25 19:06:56 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/27 17:08:55 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,16 @@
 ** prend le premier element en haut de b et le met en haut de a
 */
 
-t_list_a *pa(t_list_a *la, t_list_b *lb)
+t_list_b *pa(t_list_a *la, t_list_b *lb)
 {
 	t_list_a *firsta;
 	t_list_b *firstb;
-	int tmpb;
+	int tmp;
 
 	firsta = la;
 	firstb = lb;
-	tmpb = firstb->data;
-	ft_addAta(firsta, tmpb, 1);
-	return (firsta);
+	tmp = firstb->next->data;
+	ft_freeAtb(lb, 1);
+	ft_addAta(firsta, tmp, 1);
+	return (firstb);
 }

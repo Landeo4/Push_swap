@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 16:28:51 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/03/25 17:58:16 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/27 17:08:30 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,34 @@ int ft_getAtb(t_list_b *lb, int pos)
 		lb = lb->next;
 	}
 	return (lb->data);
+}
+
+t_list_b *ft_freeAtb(t_list_b *lb, int pos)
+{
+	int i;
+	t_list_b *prec;
+	t_list_b *cur;
+	t_list_b *tete;
+
+	prec = lb;
+	cur = lb;
+	tete = lb;
+	if (lb == NULL)
+		return (NULL);
+	if (pos == 0)
+	{
+		tete = tete->next;
+		free(cur);
+		return (tete);
+	}
+	i = 0;
+	while (i < pos)
+	{
+		i++;
+		prec = cur;
+		cur = cur->next;
+	}
+	prec->next = cur->next;
+	free(cur);
+	return (tete);
 }

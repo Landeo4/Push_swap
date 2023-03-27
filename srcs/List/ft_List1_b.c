@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 16:27:53 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/03/25 18:03:32 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/27 17:08:18 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ int ft_print_listb(t_list_b *lb)
 	tmp = lb->next;
 	if (!tmp)
 		return (-1);
+	printf("la liste B vaut\n");
 	while (tmp)
 	{
 		printf("%d\n", tmp->data);

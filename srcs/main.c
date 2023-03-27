@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:14:19 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2023/03/25 19:07:55 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/27 17:10:24 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,14 +65,21 @@ int main(int argc, char **argv)
 	while (argv[i])
 	{
 		la = ft_addAta(la, ft_atoi(argv[i]), 1);
-		lb = ft_addAtb(lb, ft_atoi(argv[i]), 1);
 		i++;
 	}
-	ft_print_both(la, lb);
-	printf("\n");
+	ft_print_lista(la);
+	sa(la);
 	pb(la, lb);
-	ft_print_both(la, lb);
-	ft_free_lista(la);
-	ft_free_listb(lb);
+	pb(la, lb);
+	pb(la, lb);
+	printf("\napres le passage de pb :\n");
+	ft_print_lista(la);
+	ft_print_listb(lb);
+	pa(la, lb);
+	pa(la, lb);
+	pa(la, lb);
+	ft_print_lista(la);
+	ft_print_listb(lb);
+	ft_free_both(la, lb);
 	return (0);
 }

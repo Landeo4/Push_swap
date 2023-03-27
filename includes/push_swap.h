@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:47:19 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/03/25 19:08:19 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/27 17:08:45 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ t_list_a *ft_free_lista(t_list_a *la);
 int ft_len_lista(t_list_a *la);
 int ft_getAta(t_list_a *la, int pos);
 int ft_print_both(t_list_a *la, t_list_b *lb);
+t_list_a *ft_freeAta(t_list_a *la, int pos);
 
 // =======================================================================
 //								Function List_B
@@ -78,6 +79,8 @@ int ft_print_listb(t_list_b *lb);
 t_list_b *ft_free_listb(t_list_b *lb);
 int ft_len_listb(t_list_b *lb);
 int ft_getAtb(t_list_b *lb, int pos);
+void ft_free_both(t_list_a *la, t_list_b *lb);
+t_list_b *ft_freeAtb(t_list_b *lb, int pos);
 
 // =======================================================================
 //								Libft
@@ -106,8 +109,10 @@ int ft_parsing_manager(int argc, char **argv);
 t_list_a *sa(t_list_a *la);
 t_list_b *sb(t_list_b *lb);
 void ss(t_list_a *la, t_list_b *lb);
-t_list_a *pa(t_list_a *la, t_list_b *lb);
+t_list_b *pa(t_list_a *la, t_list_b *lb);
 t_list_b *pb(t_list_a *la, t_list_b *lb);
+t_list_a *ft_change_pos_a(t_list_a *la);
+
 
 void push_swap(t_list_a *);
 void ft_error();

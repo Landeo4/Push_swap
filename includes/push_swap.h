@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:47:19 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/03/27 17:08:45 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/27 19:57:47 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,8 @@ void ss(t_list_a *la, t_list_b *lb);
 t_list_b *pa(t_list_a *la, t_list_b *lb);
 t_list_b *pb(t_list_a *la, t_list_b *lb);
 t_list_a *ft_change_pos_a(t_list_a *la);
+t_list_a *ra(t_list_a *la);
+t_list_b *rb(t_list_a *lb);
 
 
 void push_swap(t_list_a *);

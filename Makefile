@@ -19,8 +19,8 @@ SRCS	=	srcs/main.c\
 			srcs/Action/sb.c\
 			srcs/Action/pa.c\
 			srcs/Action/pb.c\
-
-
+			srcs/Action/ra.c\
+			srcs/Action/rb.c\
 
 OBJS= $(SRCS:.c=.o)
 

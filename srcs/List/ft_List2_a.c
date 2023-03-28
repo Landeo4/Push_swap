@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:00:03 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2023/03/27 17:06:37 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/27 18:15:27 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int ft_len_lista(t_list_a *la)
 {
 	int len;
 
-	len = 0;
+	len = 1;
 	while (la)
 	{
 		len++;

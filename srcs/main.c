@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:14:19 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2023/03/27 17:10:24 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/27 20:05:49 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main(int argc, char **argv)
 */
 
 /*
+sa sb ss
 int main(int argc, char **argv)
 {
 	(void)argc;
@@ -50,6 +51,8 @@ int main(int argc, char **argv)
 }
 */
 
+/*
+pb pa
 int main(int argc, char **argv)
 {
 	(void)argc;
@@ -82,4 +85,53 @@ int main(int argc, char **argv)
 	ft_print_listb(lb);
 	ft_free_both(la, lb);
 	return (0);
+}
+*/
+
+/*int main(int argc, char **argv)
+{
+	(void)argc;
+	int i;
+	//t_list_b *lb;
+	t_list_a *la;
+
+	la = NULL;
+	//lb = NULL;
+	la = ft_first_la(la);
+	//lb = ft_first_lb(lb);
+	i = 1;
+	while (argv[i])
+	{
+		la = ft_addAta(la, ft_atoi(argv[i]), 1);
+		i++;
+	}
+	ft_print_lista(la);
+	ra(la);
+	printf("apres ra\n");
+	ft_print_lista(la);
+	return (0);
+}*/
+
+int main(int argc, char *argv[])
+{
+	(void)argc;
+	t_list_a *la = NULL;
+	t_list_b *lb = NULL;
+	la = ft_first_la(la);
+	lb = ft_first_lb(lb);
+
+	int i = 1;
+	while (argv[i])
+	{
+		la = ft_addAta(la, ft_atoi(argv[i]), 1);
+		i++;
+	}
+	ft_print_lista(la);
+	ft_print_listb(lb);
+	pb(la, lb);
+	lb = rb(lb);
+	la = ra(la);
+	ft_print_lista(la);
+	ft_print_listb(lb);
+	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:14:19 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2023/03/27 20:05:49 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/03/29 13:58:27 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,7 @@ int main(int argc, char **argv)
 	return (0);
 }*/
 
+/*
 int main(int argc, char *argv[])
 {
 	(void)argc;
@@ -135,3 +136,28 @@ int main(int argc, char *argv[])
 	ft_print_listb(lb);
 	return 0;
 }
+*/
+
+
+int main(int argc, char *argv[])
+{
+	(void)argc;
+	t_list_b *lb;
+	int i;
+
+	lb = NULL;
+	lb = ft_first_lb(lb);
+	i = 1;
+	while (argv[i])
+	{
+		lb = ft_addAtb(lb, ft_atoi(argv[i]), 1);
+		i++;
+	}
+	ft_print_listb(lb);
+	rb(lb);
+	printf("\n\n\n");
+	ft_print_listb(lb);
+	ft_free_listb(lb);
+	return 0;
+}
+

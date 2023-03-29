@@ -21,7 +21,9 @@ SRCS	=	srcs/main.c\
 			srcs/Action/pb.c\
 			srcs/Action/ra.c\
 			srcs/Action/rb.c\
-
+			srcs/Action/rra.c\
+			srcs/Action/rrb.c\
+			
 OBJS= $(SRCS:.c=.o)
 
 CC		=	gcc

@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 19:10:16 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2023/04/24 09:38:24 by tpotilli         ###   ########.fr       */
+/*   Created: 2023/04/27 16:45:51 by tpotilli          #+#    #+#             */
+/*   Updated: 2023/04/27 17:39:24 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void push_swap(t_struct *data)
-{
-	
-}
+// pour swap deux int
 
-void ft_error()
+int		*ft_swap(int *a, int ind1, int ind2)
 {
-	printf("error\n");
+	int tmp;
+
+	tmp = a[ind1];
+	a[ind1] = a[ind2];
+	a[ind2] = tmp;
+	ft_printf("\nswap = %d et swap+1 = %d", a[ind1], a[ind2]);
+	return (a);
 }

@@ -5,46 +5,45 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 15:50:56 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/03/19 18:39:56 by tpotilli         ###   ########.fr       */
+/*   Created: 2023/03/27 17:12:31 by tpotilli          #+#    #+#             */
+/*   Updated: 2023/05/14 16:56:49 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap.h"
-
 /*
 **	This function takes as parameter: 
 **
-**	t_pile *s the name of the struct
+**	t_list_a the name of the struct
 **
-**	t_pile *list_a : name of the first list
+**	la : name of the list a
 ** =====================================================
 ** =====================================================
 **
-** It will shift every element one time up in list a
+** take the first element on the top of b and put it in top a
+** prend le premier element en haut de b et le met en haut de a
+**
+** Décale d’une position vers le haut tous les élements de la pile a.
+** Le premier élément devient le dernier.
 */
 
-void ra(t_pile *list_a)
+t_list_a	*ra(t_struct *data)
 {
-	int i;
-	int len;
-	t_pile *cur;
-	t_pile *prec;
-	t_pile *pile;
+	int			i;
+	int			recup;
+	t_list_a	*tmp;
 
-	pile = ft_AddCell(list_a);
-	cur = list_a;
-	prec = list_a;
-	i = 0;
-	len = ft_len_list(list_a);
-	while (i < len)
+	i = 1;
+	tmp = data->la->next;
+	recup = data->la->next->num;
+	while (tmp->next)
 	{
 		i++;
-		prec = cur;
-		cur = cur->next;
+		tmp = tmp->next;
 	}
-	prec->next = pile;
-	pile->next = cur;
-	//return (list_a);
+	tmp = data->la;
+	data->la = ft_freeata(data, 1);
+	data->la = ft_addata(data, recup, i);
+	ft_printf("ra\n");
+	return (data->la);
 }

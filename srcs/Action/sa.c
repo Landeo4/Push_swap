@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: landeo <landeo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 19:26:04 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2023/03/23 22:17:10 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/06/07 15:05:31 by landeo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,72 +15,31 @@
 /*
 **	This function takes as parameter: 
 **
-**	t_pile *s the name of the struct
+**	t_list_a the name of the struct
 **
-**	t_pile *list_a : name of the first list
+**	t_list_ba : name of the list a
 ** =====================================================
 ** =====================================================
 **
 ** It will swap the first and the second number in the list a
 */
 
-/*
-List *sa(t_pile *list_a, int pos)
+t_list_a	*sa(t_list_a *la,  t_struct *data)
 {
-	(void)pos;
-	
-	t_pile *first;
-	t_pile *second;
+	int			tmp1;
+	t_list_a	*first;
+	int			tmp2;
 
-	first = list_a;
-	second = list_a;
-	if (ft_len_list(list_a) < 2)
-		return (list_a);
-	if (ft_isemptyList(list_a))
-		return (list_a);
-	int tmp = list_a->data;
-    list_a->data = list_a->next->data;
-    list_a->next->data = tmp;
-	return (list_a);
-}
-*/
-
-List *sa(t_pile *list_a)
-{
-	int tmp1;
-	int pos;
-
-	pos = ft_len_list(list_a);
-    if (list_a == NULL || list_a->next == NULL)
-    {
-        return list_a;
-    }
-
-    List *first = list_a;
-    List *second = first->next;
-	tmp1 = ft_search(first, pos);
-	first->data = second->data;
-	second->data = tmp1;
-    list_a = second;
-    return list_a;
-}
-
-int	ft_search(List *list_a, int pos)
-{
-	int i;
-	List *cur;
-	List *prec;
-	int tmp;
-
-	prec = list_a;
-	cur = list_a;
-	i = 0;
-	while (i <= pos)
+	first = la->next;
+	tmp1 = first->num;
+	tmp2 = first->next->num;
+	if (la && la->next)
 	{
-		i++;
-		prec = cur;
-		cur = cur->next;
+		la = ft_freeata(data, 2);
+		la = ft_addata(data, tmp1, 2);
+		la = ft_freeata(data, 1);
+		la = ft_addata(data, tmp2, 1);
 	}
-	tmp = prec->data;
-	return (tmp);
+	ft_printf("sa\n");
+	return (la);
 }

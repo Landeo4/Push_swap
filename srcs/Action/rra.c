@@ -1,49 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rb.c                                               :+:      :+:    :+:   */
+/*   rra.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/27 19:47:30 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/05/14 16:56:51 by tpotilli         ###   ########.fr       */
+/*   Created: 2023/03/29 13:03:36 by tpotilli          #+#    #+#             */
+/*   Updated: 2023/06/06 17:49:56 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 /*
 **	This function takes as parameter: 
 **
-**	t_list_b the name of the struct
+**	t_list_a the name of the struct
 **
-**	la : name of the list b
+**	la : name of the list a
 ** =====================================================
 ** =====================================================
 **
-** take the first element on the top of b and put it in top a
-** prend le premier element en haut de b et le met en haut de a
-**
-** Décale d’une position vers le haut tous les élements de la pile a.
-** Le premier élément devient le dernier.
+** every element of a will go down
+** the first become the last
 */
 
-t_list_b	*rb(t_struct *data)
+t_list_a	*rra(t_struct *data)
 {
+	t_list_a	*tmp;
 	int			i;
 	int			recup;
-	t_list_b	*tmp;
 
+	tmp = data->la->next;
 	i = 1;
-	tmp = data->lb->next;
-	recup = data->lb->next->num;
 	while (tmp->next)
 	{
-		i++;
 		tmp = tmp->next;
+		i++;
 	}
-	tmp = data->lb;
-	data->lb = ft_freeatb(data, 1);
-	data->lb = ft_addatb(data, recup, i);
-	ft_printf("rb\n");
-	return (data->lb);
+	recup = tmp->num;
+	tmp = data->la;
+	data->la = ft_freeata(data, i);
+	data->la = ft_addata(data, recup, 1);
+	ft_printf("rra\n");
+	return (tmp);
 }

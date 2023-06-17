@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_first_list.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 19:10:16 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2023/04/24 09:38:24 by tpotilli         ###   ########.fr       */
+/*   Created: 2023/03/29 18:25:28 by tpotilli          #+#    #+#             */
+/*   Updated: 2023/04/26 18:05:06 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void push_swap(t_struct *data)
+t_list_a	*ft_first_la(t_struct *data)
 {
-	
+	data->la = malloc(sizeof(t_list_a));
+	if (!data->la)
+		return (NULL);
+	data->la->next = NULL;
+	return (data->la);
 }
 
-void ft_error()
+t_list_b	*ft_first_lb(t_struct *data)
 {
-	printf("error\n");
+	data->lb = malloc(sizeof(t_list_b));
+	if (!data->lb)
+		return (NULL);
+	data->lb->next = NULL;
+	return (data->lb);
 }

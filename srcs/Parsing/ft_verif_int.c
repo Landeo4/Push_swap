@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:29:06 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/03/14 16:59:02 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/04/24 11:19:00 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ bool ft_verif_int(char *argv)
 		if ((ft_strlen(argv) == 11) && (ft_min(argv) != 1))
 			return (0);
 	}
-	if (ft_strlen(argv) > 10)
+	else if (ft_strlen(argv) > 10)
 		return (0);
 	else if (ft_strlen(argv) == 10 && (ft_max(argv) != 1))
 		return (0);

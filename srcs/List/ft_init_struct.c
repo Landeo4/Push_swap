@@ -1,38 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ss.c                                               :+:      :+:    :+:   */
+/*   ft_init_struct.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/25 18:29:56 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/05/14 16:57:16 by tpotilli         ###   ########.fr       */
+/*   Created: 2023/03/30 18:32:15 by tpotilli          #+#    #+#             */
+/*   Updated: 2023/04/26 18:07:21 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*
-**	This function takes as parameter: 
-**
-**	t_list_a the name of the struct
-**	t_list_b the name of the second struct
-**
-**	t_list_ba : name of the list a
-**	t_list_bb : name of the list a
-** =====================================================
-** =====================================================
-**
-** It will do sa and sb at the same time
-*/
-
-t_struct	*ss(t_struct *data)
+t_struct	*ft_init_struct(t_struct *data)
 {
-	t_list_a	*a;
-	t_list_b	*b;
-
-	sa(a);
-	sb(b);
-	ft_printf("ss\n");
+	data->la = ft_first_la(data);
+	data->lb = ft_first_lb(data);
 	return (data);
 }

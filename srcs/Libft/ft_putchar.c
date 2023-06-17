@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 19:10:16 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2023/04/24 09:38:24 by tpotilli         ###   ########.fr       */
+/*   Created: 2023/01/17 14:28:51 by tpotilli          #+#    #+#             */
+/*   Updated: 2023/04/24 09:05:45 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void push_swap(t_struct *data)
+int	ft_putchar(char c)
 {
-	
+	write(1, &c, 1);
+	return (1);
 }
 
-void ft_error()
+/*int main()
 {
-	printf("error\n");
-}
+	printf("%i",ft_putchar('c', 0));
+}*/

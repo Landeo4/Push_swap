@@ -1,23 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 19:10:16 by tpotilli@st       #+#    #+#             */
-/*   Updated: 2023/04/24 09:38:24 by tpotilli         ###   ########.fr       */
+/*   Created: 2023/04/25 13:30:32 by tpotilli          #+#    #+#             */
+/*   Updated: 2023/04/26 11:59:54 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void push_swap(t_struct *data)
+char	**ft_strlcpy(char **src)
 {
-	
-}
+	size_t	j;
+	char	**dest;
+	int	i;
 
-void ft_error()
-{
-	printf("error\n");
+	i = 0;
+	j = 0;
+	dest = NULL;
+	if (!dest || !src)
+		return (0);
+	ft_printf("%s", src);
+	while (src[i])
+	{
+		while (src[i][j])
+		{
+			dest[i][j] = src[i][j];
+			j++;
+		}
+		i++;
+		j = 0;
+	}
+	dest[i][j] = '\0';
+	return (dest);
 }

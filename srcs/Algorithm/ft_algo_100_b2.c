@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 16:45:19 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/18 01:32:45 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/06/18 01:47:10 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,11 @@ void	ft_make_best_place_alg100(t_struct *data, t_list_b *lb)
 		lb = lb->next;
 		i++;
 	}
+	ft_bp_alg100help(len, i, data, nb);
+}
+
+void	ft_bp_alg100help(int len, int i, t_struct *data, int nb)
+{
 	len = len / 2;
 	if (i > len)
 	{
@@ -122,59 +127,4 @@ void	ft_make_best_place_alg100(t_struct *data, t_list_b *lb)
 			len--;
 		}
 	}
-}
-
-int	ft_found_lower_b(t_struct *data)
-{
-	t_list_b	*lb;
-	int			nb;
-
-	lb = data->lb->next;
-	nb = data->lb->next->num;
-	while (lb && lb->next)
-	{
-		if (nb > lb->num)
-			nb = lb->num;
-		lb = lb->next;
-	}
-	if (lb->num < nb)
-		nb = lb->num;
-	return (nb);
-}
-
-int	ft_verif_lb(t_struct *data)
-{
-	t_list_b	*lb;
-	int			nb;
-
-	lb = data->lb;
-	if (data->lb->next->num < data->lb->next->next->num)
-	{
-		lb = sb(lb, data);
-	}
-	nb = data->lb->next->num;
-	lb = data->lb->next;
-	while (lb)
-	{
-		if (nb < lb->num)
-			return (0);
-		lb = lb->next;
-	}
-	return (-1);
-}
-
-int	ft_found_big_lb_100(t_struct *data)
-{
-	int			nb;
-	t_list_b	*lb;
-
-	lb = data->lb->next->next;
-	nb = data->lb->next->num;
-	while (lb)
-	{
-		if (nb < lb->num)
-			nb = lb->num;
-		lb = lb->next;
-	}
-	return (nb);
 }

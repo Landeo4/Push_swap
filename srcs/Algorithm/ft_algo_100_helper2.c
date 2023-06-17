@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 22:17:25 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/18 01:02:36 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/06/18 01:47:44 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,41 @@ void	ft_take_25_algo100(t_struct *data, int compare, int little)
 	lit1 = ft_trie_100_b_little(data, little);
 	lit2 = ft_trie_100_b_biggest(data, little);
 	ft_100_swap_manager(data, lit1, lit2);
+}
+
+int	ft_verif_lb(t_struct *data)
+{
+	t_list_b	*lb;
+	int			nb;
+
+	lb = data->lb;
+	if (data->lb->next->num < data->lb->next->next->num)
+	{
+		lb = sb(lb, data);
+	}
+	nb = data->lb->next->num;
+	lb = data->lb->next;
+	while (lb)
+	{
+		if (nb < lb->num)
+			return (0);
+		lb = lb->next;
+	}
+	return (-1);
+}
+
+int	ft_found_big_lb_100(t_struct *data)
+{
+	int			nb;
+	t_list_b	*lb;
+
+	lb = data->lb->next->next;
+	nb = data->lb->next->num;
+	while (lb)
+	{
+		if (nb < lb->num)
+			nb = lb->num;
+		lb = lb->next;
+	}
+	return (nb);
 }

@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 19:18:57 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/18 01:14:29 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/06/18 01:47:33 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,22 @@ int	ft_trie_100_b_little(t_struct *data, int little)
 		i++;
 	}
 	return (-1);
+}
+
+int	ft_found_lower_b(t_struct *data)
+{
+	t_list_b	*lb;
+	int			nb;
+
+	lb = data->lb->next;
+	nb = data->lb->next->num;
+	while (lb && lb->next)
+	{
+		if (nb > lb->num)
+			nb = lb->num;
+		lb = lb->next;
+	}
+	if (lb->num < nb)
+		nb = lb->num;
+	return (nb);
 }

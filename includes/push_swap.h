@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:47:19 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/18 01:32:10 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/06/18 01:38:55 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -247,5 +247,6 @@ void		ft_best_place_helper(int cpt, int len, t_struct *data);
 void		ft_best_place_102_helper(int i ,int len, t_struct *data);
 void		ft_100_swap_help(t_struct *data, int len, t_list_b *lb);
 void		ft_100_lit1(t_list_b *lb, t_struct *data, int cpt);
+void		ft_bp_alg100help(int len, int i, t_struct *data, int nb);
 
 #endif

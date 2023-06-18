@@ -41,7 +41,6 @@ SRCS	=	srcs/main.c\
 			srcs/Action/rra.c\
 			srcs/Action/rrb.c\
 			srcs/Algorithm/ft_algo_manager.c\
-			srcs/Algorithm/ft_algo_4.c\
 			srcs/Algorithm/ft_algo_3.c\
 			srcs/Algorithm/ft_algo_10.c\
 			srcs/Algorithm/ft_algo_10helper.c\
@@ -51,6 +50,12 @@ SRCS	=	srcs/main.c\
 			srcs/Algorithm/ft_algo_100_b.c\
 			srcs/Algorithm/ft_algo_100_b2.c\
 			srcs/Algorithm/ft_algo_100helper.c\
+			srcs/Algorithm/ft_algo_500.c\
+			srcs/Algorithm/ft_algo_500helper1.c\
+			srcs/Algorithm/ft_algo_500helper2.c\
+			srcs/Algorithm/ft_algo_500_b.c\
+			srcs/Algorithm/ft_algo_500_b2.c\
+			srcs/Algorithm/ft_algo_500helper.c\
 
 
 OBJS= $(SRCS:.c=.o)

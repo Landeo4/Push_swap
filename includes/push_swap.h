@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:47:19 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/18 13:40:57 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/06/18 15:18:48 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -271,7 +271,7 @@ int		ft_somme_500helper(int len, int argc, t_list_a *la, int token);
 void	ft_take_25_algo500(t_struct *data, int compare, int little);
 int		ft_verif_lb500(t_struct *data);
 int		ft_found_big_lb_500(t_struct *data);
-
+void	ft_alg500_last(t_struct *data, int moyennech1, int first);
 
 
 #endif

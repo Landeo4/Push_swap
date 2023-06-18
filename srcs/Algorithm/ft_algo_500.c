@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 13:27:25 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/18 14:14:37 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/06/18 15:18:51 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	ft_algo_500_manager(t_struct *data, int argc)
 	int			token;
 	int			i;
 	int			first;
-	int			len;
 
 	i = 0;
 	token = 1;
@@ -35,12 +34,20 @@ void	ft_algo_500_manager(t_struct *data, int argc)
 		i = 0;
 		token++;
 	}
-	len = ft_len_lista(data);
-	if (len != 0)
-		ft_alg500_last(data, moyennech1);
-	ft_printf("==========LISTE B=========");
-	ft_print_listb(data);
+	ft_alg500_last(data, moyennech1, first);
 	ft_algo500manager_helper2(data);
+}
+
+void	ft_alg500_last(t_struct *data, int moyennech1, int first)
+{
+	int	len;
+
+	len = ft_len_lista(data);
+	while (len != 0)
+	{
+		ft_chunk(data, moyennech1, first);
+		len--;
+	}
 }
 
 int	ft_algo500manager_helper2(t_struct *data)

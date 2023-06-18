@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 13:28:09 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/18 13:38:07 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/06/18 14:05:17 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ int	ft_somme_algo_500(t_list_a *la, int argc, int token, int len)
 	int			chiffre;
 	double		last;
 
-	if (token == 5)
+	if (token == 12)
 	{
 		chiffre = 2147483647;
 		return (chiffre);
 	}
-	last = token * 0.2;
+	last = token * 0.09;
 	chiffre = 0;
 	chiffre = ft_somme_100helper(len, argc, la, token);
 	chiffre = chiffre * last;

@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 13:27:25 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/18 13:31:45 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/06/18 14:14:37 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,15 @@ void	ft_algo_500_manager(t_struct *data, int argc)
 	int			token;
 	int			i;
 	int			first;
+	int			len;
 
 	i = 0;
 	token = 1;
 	first = 0;
-	while (token != 6)
+	while (token != 12)
 	{
 		moyennech1 = ft_helper500man(token, moyennech1, data, argc);
-		while (i < 20)
+		while (i < 45)
 		{
 			i++;
 			ft_chunk(data, moyennech1, first);
@@ -34,6 +35,11 @@ void	ft_algo_500_manager(t_struct *data, int argc)
 		i = 0;
 		token++;
 	}
+	len = ft_len_lista(data);
+	if (len != 0)
+		ft_alg500_last(data, moyennech1);
+	ft_printf("==========LISTE B=========");
+	ft_print_listb(data);
 	ft_algo500manager_helper2(data);
 }
 
@@ -58,7 +64,8 @@ int	ft_helper500man(int token, int moyennech1, t_struct *data, int argc)
 
 	la = data->la->next;
 	len = ft_len_lista(data);
-	moyennech1 = ft_somme_algo_100(la, argc, token, len);
+	moyennech1 = ft_somme_algo_500(la, argc, token, len);
+	ft_printf("======mon chunk est de %d======\n", moyennech1);
 	return (moyennech1);
 }
 
@@ -71,22 +78,22 @@ int	ft_chunk_500(t_struct *data, int moyenne, int token)
 	t_list_a	*la;
 
 	la = data->la->next;
-	littlech1 = ft_found_pos_little_first_part(data, moyenne, la);
-	littlech2 = ft_found_pos_little_last_part(data, moyenne, la);
+	littlech1 = ft_found_pos_little_first_part500(data, moyenne, la);
+	littlech2 = ft_found_pos_little_last_part500(data, moyenne, la);
 	if (littlech1 >= littlech2)
 		compare = 0;
 	else
 		compare = 1;
 	if (compare == 1)
-		little = ft_found_little_100_75(data, littlech2, la);
+		little = ft_found_little_500_75(data, littlech2, la);
 	else if (compare == 0)
-		little = ft_found_little_100_25(data, littlech1, moyenne);
+		little = ft_found_little_500_25(data, littlech1, moyenne);
 	if (token < 2)
 	{
 		ft_chunk_helper(data, compare, little);
 		return (0);
 	}
-	ft_take_25_algo100(data, compare, little);
+	ft_take_25_algo500(data, compare, little);
 	return (0);
 }
 

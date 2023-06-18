@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 13:27:48 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/18 13:36:54 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/06/18 17:49:01 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ int	ft_found_little_500_25(t_struct *data, int pos, int chunk)
 		}
 	}
 	else
-		nb = ft_100else(pos, nb, tab);
+		nb = ft_500else(pos, nb, tab);
 	return (nb);
 }
 

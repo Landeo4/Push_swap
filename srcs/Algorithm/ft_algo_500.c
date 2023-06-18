@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 13:27:25 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/18 15:18:51 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/06/18 17:49:19 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	ft_algo500manager_helper2(t_struct *data)
 	int	len;
 
 	len = ft_len_listb(data);
-	ft_make_list_right100(data, len);
+	ft_make_list_right500(data, len);
 	while (len > 0)
 	{
 		data->lb = pa(data);
@@ -72,7 +72,6 @@ int	ft_helper500man(int token, int moyennech1, t_struct *data, int argc)
 	la = data->la->next;
 	len = ft_len_lista(data);
 	moyennech1 = ft_somme_algo_500(la, argc, token, len);
-	ft_printf("======mon chunk est de %d======\n", moyennech1);
 	return (moyennech1);
 }
 

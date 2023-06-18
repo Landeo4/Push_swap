@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 13:28:44 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/18 13:34:01 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/06/18 17:49:36 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ void	ft_500_swap_manager(t_struct *data, int lit1, int lit2)
 		return ;
 	}
 	else if (lit1 == -1)
-		ft_100_lit1(lb, data, cpt);
+		ft_500_lit1(lb, data, cpt);
 	else if (lit2 == -1)
-		ft_100_swap_help(data, len, lb);
+		ft_500_swap_help(data, len, lb);
 }
 
 void	ft_500_lit1(t_list_b *lb, t_struct *data, int cpt)
@@ -53,14 +53,14 @@ void	ft_500_lit1(t_list_b *lb, t_struct *data, int cpt)
 		data->lb = sb(data->lb, data);
 		return ;
 	}
-	ft_take_best_place102(data, cpt);
+	ft_take_best_place502(data, cpt);
 	data->la = pb(data);
 	return ;
 }
 
 void	ft_500_swap_help( t_struct *data, int len, t_list_b *lb)
 {
-	ft_make_best_place_alg100(data, lb);
+	ft_make_best_place_alg500(data, lb);
 	data->la = pb(data);
 	return ;
 	lb = data->lb->next;
@@ -100,7 +100,7 @@ void	ft_make_best_place_alg500(t_struct *data, t_list_b *lb)
 		lb = lb->next;
 		i++;
 	}
-	ft_bp_alg100help(len, i, data, nb);
+	ft_bp_alg500help(len, i, data, nb);
 }
 
 void	ft_bp_alg500help(int len, int i, t_struct *data, int nb)

@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 13:27:04 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/18 13:35:35 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/06/18 17:49:09 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_make_list_right500(t_struct *data, int len)
 	int		i;
 
 	big = ft_found_big_lb_100(data);
-	i = ft_trie_100_b_biggest(data, big);
+	i = ft_trie_500_b_biggest(data, big);
 	len = ft_len_listb(data);
 	len = len / 2;
 	if (i > len)

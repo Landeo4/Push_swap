@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 13:28:28 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/18 13:32:47 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/06/18 17:49:49 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_take_best_place500(t_struct *data, int cpt)
 		}
 		return (0);
 	}
-	ft_best_place_helper(cpt, len, data);
+	ft_best_place_helper500(cpt, len, data);
 	return (0);
 }
 
@@ -93,7 +93,7 @@ void	ft_take_best_place502(t_struct *data, int nb)
 	if (i == 0)
 		data->lb = rb(data);
 	else
-		ft_best_place_102_helper(i, len, data);
+		ft_best_place_502_helper(i, len, data);
 }
 
 void	ft_best_place_502_helper(int i, int len, t_struct *data)

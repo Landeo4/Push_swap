@@ -6,7 +6,7 @@
 /*   By: landeo <landeo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 16:45:19 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/19 17:25:38 by landeo           ###   ########.fr       */
+/*   Updated: 2023/06/19 17:50:17 by landeo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_100_swap_manager(t_struct *data, int lit1, int lit2, int chunk)
 	else if (lit1 == -1)
 		ft_100_lit1(lb, data, cpt, chunk);
 	else if (lit2 == -1)
-		ft_100_swap_help(data, len, lb);
+		ft_100_swap_help(data, len, lb, chunk);
 }
 
 void	ft_100_lit1(t_list_b *lb, t_struct *data, int cpt, int chunk)
@@ -58,9 +58,9 @@ void	ft_100_lit1(t_list_b *lb, t_struct *data, int cpt, int chunk)
 	return ;
 }
 
-void	ft_100_swap_help( t_struct *data, int len, t_list_b *lb)
+void	ft_100_swap_help( t_struct *data, int len, t_list_b *lb, int chunk)
 {
-	ft_make_best_place_alg100(data, lb);
+	ft_make_best_place_alg100(data, lb, chunk);
 	data->la = pb(data);
 	return ;
 	lb = data->lb->next;
@@ -84,14 +84,12 @@ void	ft_100_swap_help( t_struct *data, int len, t_list_b *lb)
 			data->lb = sb(data->lb, data);
 }
 
-void	ft_make_best_place_alg100(t_struct *data, t_list_b *lb)
+void	ft_make_best_place_alg100(t_struct *data, t_list_b *lb, int chunk)
 {
 	int			nb;
-	int			len;
 	int			i;
 
 	i = 0;
-	len = ft_len_listb(data);
 	nb = data->lb->next->num;
 	while (lb)
 	{
@@ -100,11 +98,16 @@ void	ft_make_best_place_alg100(t_struct *data, t_list_b *lb)
 		lb = lb->next;
 		i++;
 	}
-	ft_bp_alg100help(len, i, data, nb);
+	ft_bp_alg100help(chunk, i, data, nb);
 }
 
-void	ft_bp_alg100help(int len, int i, t_struct *data, int nb)
+void	ft_bp_alg100help(int chunk, int i, t_struct *data, int nb)
 {
+	int len;
+	int	nb2;
+
+	nb2 = ft_chunk(data, chunk, -1);
+	len = ft_len_listb(data);
 	len = len / 2;
 	if (i > len)
 	{
@@ -113,8 +116,12 @@ void	ft_bp_alg100help(int len, int i, t_struct *data, int nb)
 		{
 			if (data->lb->next->num == nb)
 				return ;
-			data->lb = rrb(data);
+			if (nb2 < 0)
+				data = rrr(data);
+			else
+				data->lb = rrb(data);
 			i++;
+			nb2--;
 		}
 	}
 	else
@@ -123,8 +130,12 @@ void	ft_bp_alg100help(int len, int i, t_struct *data, int nb)
 		{
 			if (data->lb->next->num == nb)
 				return ;
-			data->lb = rb(data);
-			len--;
+			if (nb2 > 0)
+				data = rrr(data);
+			else
+				data->lb = rb(data);
+			i++;
+			nb2++;
 		}
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_algo_500.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: landeo <landeo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 13:27:25 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/18 17:49:19 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/06/19 13:21:26 by landeo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	ft_algo_500_manager(t_struct *data, int argc)
 	i = 0;
 	token = 1;
 	first = 0;
+	if (ft_checker_valid(data) == 0)
+		return ;
 	while (token != 12)
 	{
 		moyennech1 = ft_helper500man(token, moyennech1, data, argc);

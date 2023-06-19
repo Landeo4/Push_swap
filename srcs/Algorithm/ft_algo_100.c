@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_algo_100.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: landeo <landeo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:19:06 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/18 00:39:35 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/06/19 14:05:30 by landeo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	ft_algo_100_manager(t_struct *data, int argc)
 	i = 0;
 	token = 1;
 	first = 0;
+	if (ft_checker_valid(data) == 0)
+		return ;
 	while (token != 6)
 	{
 		moyennech1 = ft_helper100man(token, moyennech1, data, argc);
@@ -41,11 +43,13 @@ void	ft_algo_100_manager(t_struct *data, int argc)
 			i++;
 			ft_chunk(data, moyennech1, first);
 			first++;
+			//ft_print_listb(data);
 		}
 		i = 0;
 		token++;
 	}
 	ft_algo100manager_helper2(data);
+	//ft_print_lista(data);
 }
 
 int	ft_algo100manager_helper2(t_struct *data)

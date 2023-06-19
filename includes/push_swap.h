@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: landeo <landeo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:47:19 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/18 15:18:48 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/06/19 13:37:15 by landeo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,13 +143,21 @@ int			ft_parsing_manager_sup(char **argv);
 t_list_a		*sa(t_list_a *la, t_struct *data);
 t_list_b		*sb(t_list_b *lb, t_struct *data);
 t_struct		*ss(t_struct *data);
+t_struct		*sa_ss(t_struct *data);
+t_struct		*sb_ss(t_struct *data);
 t_list_a		*pb(t_struct *data);
 t_list_b		*pa(t_struct *data);
 t_list_a		*ft_change_pos_a(t_list_a *la);
+t_struct		*rr(t_struct *data);
 t_list_a		*ra(t_struct *data);
 t_list_b		*rb(t_struct *data);
+t_list_a		*ra_rr(t_struct *data);
+t_list_b		*rb_rr(t_struct *data);
 t_list_a		*rra(t_struct *data);
 t_list_b		*rrb(t_struct *data);
+t_struct		*rrr(t_struct *data);
+t_list_a		*rra_rr(t_struct *data);
+t_list_b		*rrb_rr(t_struct *data);
 
 // =======================================================================
 //								algo
@@ -175,6 +183,7 @@ void		ft_10_action(t_list_a *la, t_struct *data);
 int			ft_found_pos_little(t_struct *data);
 void		ft_tri_10(t_list_a *la, t_struct *data);
 void		ft_10_action_helper(t_list_a *tmp, t_struct *data, int num);
+bool		ft_checker_valid(t_struct *data);
 
 // =======================================================================
 //								algo 100

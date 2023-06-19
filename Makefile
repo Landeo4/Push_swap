@@ -38,8 +38,10 @@ SRCS	=	srcs/main.c\
 			srcs/Action/pb.c\
 			srcs/Action/ra.c\
 			srcs/Action/rb.c\
+			srcs/Action/rr.c\
 			srcs/Action/rra.c\
 			srcs/Action/rrb.c\
+			srcs/Action/rrr.c\
 			srcs/Algorithm/ft_algo_manager.c\
 			srcs/Algorithm/ft_algo_3.c\
 			srcs/Algorithm/ft_algo_10.c\

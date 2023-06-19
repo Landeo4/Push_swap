@@ -6,7 +6,7 @@
 /*   By: landeo <landeo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 22:17:25 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/19 01:45:45 by landeo           ###   ########.fr       */
+/*   Updated: 2023/06/19 14:21:47 by landeo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,15 @@ void	ft_take_25_algo100(t_struct *data, int compare, int little)
 		lit1 = 0;
 	else if (compare == 1)
 	{
+		while (data->lb->next->num > little && data->la->next->num != little)
+			data = rrr(data);
 		while (data->la->next->num != little)
 			data->la = rra(data);
 	}
 	else if (compare == 0)
 	{
+		while (data->lb->next->num > little && data->la->next->num != little)
+			data = rr(data);
 		while (data->la->next->num != little)
 			data->la = ra(data);
 	}
@@ -75,12 +79,12 @@ int	ft_verif_lb(t_struct *data)
 {
 	t_list_b	*lb;
 	int			nb;
+	//int			nb1;
 
+	//nb1 = ft_
 	lb = data->lb;
 	if (data->lb->next->num < data->lb->next->next->num)
-	{
 		lb = sb(lb, data);
-	}
 	nb = data->lb->next->num;
 	lb = data->lb->next;
 	while (lb)

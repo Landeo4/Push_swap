@@ -6,7 +6,7 @@
 /*   By: landeo <landeo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 13:28:09 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/19 01:45:53 by landeo           ###   ########.fr       */
+/*   Updated: 2023/06/19 16:57:41 by landeo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	ft_take_25_algo500(t_struct *data, int compare, int little)
 	}
 	lit1 = ft_trie_500_b_little(data, little);
 	lit2 = ft_trie_500_b_biggest(data, little);
-	ft_100_swap_manager(data, lit1, lit2);
+	ft_500_swap_manager(data, lit1, lit2);
 }
 
 int	ft_verif_lb500(t_struct *data)

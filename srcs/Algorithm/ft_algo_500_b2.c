@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_algo_500_b2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: landeo <landeo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 13:28:44 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/18 17:49:36 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/06/19 16:58:03 by landeo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_500_swap_manager(t_struct *data, int lit1, int lit2)
 	if (lit1 != -1 && lit2 != -1)
 	{
 		cpt = ft_found_best_place100(data, lb);
-		ft_take_best_place100(data, cpt);
+		ft_take_best_place500(data, cpt);
 		data->la = pb(data);
 		if (data->lb->next->num < data->lb->next->next->num)
 			data->lb = sb(data->lb, data);

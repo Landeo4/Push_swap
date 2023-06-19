@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_algo_100_b2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: landeo <landeo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 16:45:19 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/18 01:47:10 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/06/19 17:25:38 by landeo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_100_swap_manager(t_struct *data, int lit1, int lit2)
+void	ft_100_swap_manager(t_struct *data, int lit1, int lit2, int chunk)
 {
 	int			cpt;
 	t_list_b	*lb;
@@ -24,19 +24,19 @@ void	ft_100_swap_manager(t_struct *data, int lit1, int lit2)
 	if (lit1 != -1 && lit2 != -1)
 	{
 		cpt = ft_found_best_place100(data, lb);
-		ft_take_best_place100(data, cpt);
+		ft_take_best_place100(data, cpt, chunk);
 		data->la = pb(data);
 		if (data->lb->next->num < data->lb->next->next->num)
 			data->lb = sb(data->lb, data);
 		return ;
 	}
 	else if (lit1 == -1)
-		ft_100_lit1(lb, data, cpt);
+		ft_100_lit1(lb, data, cpt, chunk);
 	else if (lit2 == -1)
 		ft_100_swap_help(data, len, lb);
 }
 
-void	ft_100_lit1(t_list_b *lb, t_struct *data, int cpt)
+void	ft_100_lit1(t_list_b *lb, t_struct *data, int cpt, int chunk)
 {
 	while (lb->next)
 		lb = lb->next;
@@ -53,7 +53,7 @@ void	ft_100_lit1(t_list_b *lb, t_struct *data, int cpt)
 		data->lb = sb(data->lb, data);
 		return ;
 	}
-	ft_take_best_place102(data, cpt);
+	ft_take_best_place102(data, cpt, chunk);
 	data->la = pb(data);
 	return ;
 }

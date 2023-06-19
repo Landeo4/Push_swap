@@ -6,7 +6,7 @@
 /*   By: landeo <landeo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:19:06 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/19 14:05:30 by landeo           ###   ########.fr       */
+/*   Updated: 2023/06/19 17:04:02 by landeo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,11 @@ void	ft_algo_100_manager(t_struct *data, int argc)
 			i++;
 			ft_chunk(data, moyennech1, first);
 			first++;
-			//ft_print_listb(data);
 		}
 		i = 0;
 		token++;
 	}
 	ft_algo100manager_helper2(data);
-	//ft_print_lista(data);
 }
 
 int	ft_algo100manager_helper2(t_struct *data)
@@ -101,7 +99,7 @@ int	ft_chunk(t_struct *data, int moyenne, int token)
 		ft_chunk_helper(data, compare, little);
 		return (0);
 	}
-	ft_take_25_algo100(data, compare, little);
+	ft_take_25_algo100(data, compare, little, moyenne);
 	return (0);
 }
 

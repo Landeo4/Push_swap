@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_algo_100_helper2.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: landeo <landeo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 22:17:25 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/19 16:50:57 by landeo           ###   ########.fr       */
+/*   Updated: 2023/06/20 17:37:42 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	ft_somme_100helper(int len, int argc, t_list_a *la, int token)
 	return (chiffre);
 }
 
-void	ft_take_25_algo100(t_struct *data, int compare, int little, int chunk)
+void	ft_take_25_algo100(t_struct *data, int compare, int little)
 {
 	int		lit1;
 	int		lit2;
@@ -58,21 +58,38 @@ void	ft_take_25_algo100(t_struct *data, int compare, int little, int chunk)
 		lit1 = 0;
 	else if (compare == 1)
 	{
-		while (data->lb->next->num > little && data->la->next->num != little)
-			data = rrr(data);
 		while (data->la->next->num != little)
 			data->la = rra(data);
+		//ft_print_listb(data);
 	}
 	else if (compare == 0)
 	{
-		while (data->lb->next->num > little && data->la->next->num != little)
-			data = rr(data);
 		while (data->la->next->num != little)
 			data->la = ra(data);
+		//ft_print_listb(data);
 	}
 	lit1 = ft_trie_100_b_little(data, little);
 	lit2 = ft_trie_100_b_biggest(data, little);
-	ft_100_swap_manager(data, lit1, lit2, chunk);
+	ft_100_swap_manager(data, lit1, lit2);
+}
+
+int	ft_verif_lb(t_struct *data)
+{
+	t_list_b	*lb;
+	int			nb;
+
+	lb = data->lb;
+	if (data->lb->next->num < data->lb->next->next->num)
+		lb = sb(lb, data);
+	nb = data->lb->next->num;
+	lb = data->lb->next;
+	while (lb)
+	{
+		if (nb < lb->num)
+			return (0);
+		lb = lb->next;
+	}
+	return (-1);
 }
 
 int	ft_found_big_lb_100(t_struct *data)

@@ -47,6 +47,7 @@ SRCS	=	srcs/main.c\
 			srcs/Algorithm/ft_algo_10.c\
 			srcs/Algorithm/ft_algo_10helper.c\
 			srcs/Algorithm/ft_algo_100.c\
+			srcs/Algorithm/ft_algo_100reduce.c\
 			srcs/Algorithm/ft_algo_100_helper1.c\
 			srcs/Algorithm/ft_algo_100_helper2.c\
 			srcs/Algorithm/ft_algo_100_b.c\

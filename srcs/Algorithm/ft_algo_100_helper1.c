@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_algo_100_helper1.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: landeo <landeo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:59:10 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/19 14:20:09 by landeo           ###   ########.fr       */
+/*   Updated: 2023/06/20 17:24:43 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,16 @@ int	ft_found_pos_little_first_part(t_struct *data, int chunk, t_list_a *la)
 	int			len;
 
 	len = ft_len_lista(data);
-	len = len / 4;
+	len = len / 2;
 	i = 1;
 	tab = la;
 	nb = la->num;
 	while (tab && len > 0)
 	{
 		if (nb <= chunk)
+		{
 			return (i);
+		}
 		i++;
 		len--;
 		tab = tab->next;
@@ -45,7 +47,7 @@ int	ft_found_pos_little_last_part(t_struct *data, int chunk, t_list_a *la)
 
 	len2 = 1;
 	len = ft_len_lista(data);
-	len = len * 0.75;
+	len = len * 0.5;
 	i = len / 5;
 	tab = la->next;
 	while (len2 < len)

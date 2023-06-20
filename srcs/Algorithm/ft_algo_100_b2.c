@@ -6,13 +6,13 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 16:45:19 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/18 01:47:10 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/06/20 18:38:39 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_100_swap_manager(t_struct *data, int lit1, int lit2)
+void	ft_100_swap_manager(t_struct *data, int lit1, int lit2, int chunk)
 {
 	int			cpt;
 	t_list_b	*lb;
@@ -24,7 +24,7 @@ void	ft_100_swap_manager(t_struct *data, int lit1, int lit2)
 	if (lit1 != -1 && lit2 != -1)
 	{
 		cpt = ft_found_best_place100(data, lb);
-		ft_take_best_place100(data, cpt);
+		ft_take_best_place100(data, cpt, chunk);
 		data->la = pb(data);
 		if (data->lb->next->num < data->lb->next->next->num)
 			data->lb = sb(data->lb, data);

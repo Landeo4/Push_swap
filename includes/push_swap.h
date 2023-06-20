@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:47:19 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/20 18:33:03 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/06/20 18:48:02 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,7 +197,7 @@ bool		ft_tab_checker(int *tmp, t_struct *data);
 void		push_swap(t_list_a *data);
 void		ft_error(void);
 int			*ft_essaie(int *tmp, t_struct *data, int *tab);
-void		ft_take_25_algo100(t_struct *data, int compare, int little);
+void		ft_take_25_algo100(t_struct *data, int compare, int little, int chunk);
 int			ft_get_100_25(t_struct *data);
 int			ft_get_cpt_100(t_struct *data);
 bool		ft_100_check(t_struct *data, int len);
@@ -222,10 +222,10 @@ int			ft_trie_100_b_little(t_struct *data, int little);
 int			ft_trie_100_b_biggest(t_struct *data, int little);
 int			ft_found_best_place100(t_struct *data, t_list_b *lb);
 int			ft_take_b_100(t_struct *data, int lit, int token);
-int			ft_take_best_place100(t_struct *data, int cpt);
+int			ft_take_best_place100(t_struct *data, int cpt, int chunk);
 void		ft_sort_b100(t_struct *data, int i);
 void		ft_take_first_second_algo100(t_struct *data, int compare, int little);
-void		ft_100_swap_manager(t_struct *data, int lit1, int lit2);
+void		ft_100_swap_manager(t_struct *data, int lit1, int lit2, int chunk);
 int			ft_found_big_lb_100(t_struct *data);
 void		ft_make_list_right(t_struct *data, int i);
 int			ft_found_pos_lb_big(t_struct *data);
@@ -240,7 +240,8 @@ int			ft_chunk_helper(t_struct *data, int compare, int little);
 int			ft_helper100man(int token, int moyennech1, t_struct *data, int argc);
 int			ft_algo100manager_helper2(t_struct *data);
 int			ft_100else(int pos, int nb, t_list_a *tab);
-void		ft_best_place_helper(int cpt, int len, t_struct *data);
+void		ft_best_place_helper0(int cpt, int len, t_struct *data, int nb);
+void		ft_best_place_helper1(int cpt, int len, t_struct *data, int nb);
 void		ft_best_place_102_helper(int i ,int len, t_struct *data);
 void		ft_100_swap_help(t_struct *data, int len, t_list_b *lb);
 void		ft_100_lit1(t_list_b *lb, t_struct *data, int cpt);

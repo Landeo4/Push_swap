@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 15:29:41 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/20 18:22:18 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/06/20 18:49:01 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,45 +30,93 @@ int	ft_found_best_place100(t_struct *data, t_list_b *lb)
 	return (-1);
 }
 
-int	ft_take_best_place100(t_struct *data, int cpt)
+int	ft_take_best_place100(t_struct *data, int cpt, int chunk)
 {
 	int			len;
+	int			nb;
 
+	nb = ft_reduce_managera(data, chunk);
 	len = ft_len_listb(data);
 	len = len / 2;
 	if (cpt == len)
 	{
 		while (len > 0)
 		{
+			if (nb > 0)
+				data = rr(data);
+			else
+				data->lb = rb(data);
 			len--;
-			data->lb = rb(data);
+			nb--;
 		}
 		return (0);
 	}
-	ft_best_place_helper(cpt, len, data);
+	if (nb > 0)
+		ft_best_place_helper1(cpt, len, data, nb);
+	else if (nb < 0)
+		ft_best_place_helper0(cpt, len, data, nb);
 	return (0);
 }
 
-void	ft_best_place_helper(int cpt, int len, t_struct *data)
+void	ft_best_place_helper1(int cpt, int len, t_struct *data, int nb)
 {
 	if (cpt > len)
 	{
 		len = ft_len_listb(data);
 		while (len > cpt)
 		{
-			data->lb = rrb(data);
+			if (nb > 0)
+				data = rrr(data);
+			else
+				data->lb = rrb(data);
 			cpt++;
+			nb--;
 		}
 	}
 	else if (cpt < len)
 	{
 		while (cpt > 0)
 		{
-			data->lb = rb(data);
+			if (nb > 0)
+				data = rr(data);
+			else
+				data->lb = rb(data);
 			cpt--;
+			nb--;
 		}
 	}
 }
+
+
+void	ft_best_place_helper0(int cpt, int len, t_struct *data, int nb)
+{
+	if (cpt > len)
+	{
+		len = ft_len_listb(data);
+		while (len > cpt)
+		{
+			if (nb < 0)
+				data = rrr(data);
+			else
+				data->lb = rrb(data);
+			cpt++;
+			nb++;
+		}
+	}
+	else if (cpt < len)
+	{
+		while (cpt > 0)
+		{
+			if (nb < 0)
+				data = rr(data);
+			else
+				data->lb = rb(data);
+			cpt--;
+			nb++;
+		}
+	}
+}
+
 
 void	ft_take_best_place102(t_struct *data, int nb)
 {

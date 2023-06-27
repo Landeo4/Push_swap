@@ -6,7 +6,7 @@
 /*   By: landeo <landeo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:22:38 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/19 12:51:48 by landeo           ###   ########.fr       */
+/*   Updated: 2023/06/07 14:19:58 by landeo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ void	ft_algo_3(t_struct *data)
 	num1 = data->la->next->num;
 	num2 = data->la->next->next->num;
 	num3 = data->la->next->next->next->num;
-	if (num1 < num2 && num2 < num3)
-		return ;
 	if (num1 > num2 && num2 < num3 && num1 > num3)
 		data->la = ra(data);
 	else if (num1 < num2 && num2 > num3 && num1 < num3)

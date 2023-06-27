@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_algo_500helper2.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: landeo <landeo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 13:28:09 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/19 16:57:41 by landeo           ###   ########.fr       */
+/*   Updated: 2023/06/20 22:01:31 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,13 @@ void	ft_take_25_algo500(t_struct *data, int compare, int little)
 	{
 		while (data->la->next->num != little)
 			data->la = rra(data);
+		ft_print_listb(data);
 	}
 	else if (compare == 0)
 	{
 		while (data->la->next->num != little)
 			data->la = ra(data);
+		ft_print_listb(data);
 	}
 	lit1 = ft_trie_500_b_little(data, little);
 	lit2 = ft_trie_500_b_biggest(data, little);

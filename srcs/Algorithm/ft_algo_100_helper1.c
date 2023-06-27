@@ -6,13 +6,13 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:59:10 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/20 17:24:43 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/06/27 08:12:28 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_found_pos_little_first_part(t_struct *data, int chunk, t_list_a *la)
+int	ft_found_pos_little_first_part(t_struct *data, int chunk)
 {
 	int			i;
 	t_list_a	*tab;
@@ -22,23 +22,21 @@ int	ft_found_pos_little_first_part(t_struct *data, int chunk, t_list_a *la)
 	len = ft_len_lista(data);
 	len = len / 2;
 	i = 1;
-	tab = la;
-	nb = la->num;
+	tab = data->la->next;
+	nb = tab->num;
 	while (tab && len > 0)
 	{
 		if (nb <= chunk)
-		{
 			return (i);
-		}
 		i++;
 		len--;
 		tab = tab->next;
 		nb = tab->num;
 	}
-	return (0);
+	return (-1);
 }
 
-int	ft_found_pos_little_last_part(t_struct *data, int chunk, t_list_a *la)
+int	ft_found_pos_little_last_part(t_struct *data, int chunk)
 {
 	int			i;
 	t_list_a	*tab;
@@ -49,7 +47,7 @@ int	ft_found_pos_little_last_part(t_struct *data, int chunk, t_list_a *la)
 	len = ft_len_lista(data);
 	len = len * 0.5;
 	i = len / 5;
-	tab = la->next;
+	tab = data->la->next;
 	while (len2 < len)
 	{
 		tab = tab->next;
@@ -58,11 +56,12 @@ int	ft_found_pos_little_last_part(t_struct *data, int chunk, t_list_a *la)
 	while (len2 < ft_len_lista(data))
 	{
 		if (tab->num < chunk)
-			i = 0;
+			i = 1;
 		tab = tab->next;
 		len2++;
 		i++;
 	}
+	//ft_printf("i %d\n", i);
 	return (i);
 }
 
@@ -114,11 +113,12 @@ int	ft_found_little_100_75(t_struct *data, int pos, t_list_a *la)
 	ch = ch - pos;
 	len = 0;
 	tab = la;
+	//ft_printf(" ch %d, pos %d len %d\n", ch, pos, len);
 	while (len != ch && tab->next)
 	{
 		tab = tab->next;
-		nb = tab->num;
 		len++;
 	}
+	nb = tab->num;
 	return (nb);
 }

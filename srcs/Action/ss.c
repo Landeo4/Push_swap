@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ss.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: landeo <landeo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 18:29:56 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/19 13:55:30 by landeo           ###   ########.fr       */
+/*   Updated: 2023/06/20 22:08:19 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_struct	*ss(t_struct *data)
 	return (data);
 }
 
-t_struct	*sa_ss(t_struct *data)
+t_list_a	*sa_ss(t_struct *data)
 {
 	t_list_a *la;
 
@@ -42,9 +42,9 @@ t_struct	*sa_ss(t_struct *data)
 	t_list_a	*first;
 	int			tmp2;
 
+	la = data->la->next;
 	first = la->next;
 	tmp1 = first->num;
-	la = data->la->next;
 	tmp2 = first->next->num;
 	if (la && la->next)
 	{
@@ -56,7 +56,7 @@ t_struct	*sa_ss(t_struct *data)
 	return (la);
 }
 
-t_struct	*sb_ss(t_struct *data)
+t_list_b	*sb_ss(t_struct *data)
 {
 	t_list_b *lb;
 	int			tmp1;

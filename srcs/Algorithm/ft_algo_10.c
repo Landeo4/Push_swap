@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_algo_10.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: landeo <landeo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 12:16:43 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/19 13:21:08 by landeo           ###   ########.fr       */
+/*   Updated: 2023/06/17 19:17:42 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ void	ft_algo_10(t_struct *data)
 	int			i;
 	int			pos;
 
-	if (ft_checker_valid(data) == 0)
-		return ;
 	i = 0;
 	pos = ft_found_pos_little(data);
 	num = ft_found_little(data);
@@ -54,11 +52,6 @@ void	ft_tri_10(t_list_a *la, t_struct *data)
 	{
 		ft_10_action(la, data);
 		la = data->la->next;
-		if (ft_len_lista(data) == 3)
-		{
-			ft_algo_3(data);
-			break;
-		}
 	}
 	while (ft_len_listb(data))
 		data->lb = pa(data);

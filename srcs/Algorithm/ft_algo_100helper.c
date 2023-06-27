@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 19:18:57 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/18 01:47:33 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/06/27 07:04:58 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ void	ft_take_first_second_algo100(t_struct *data, int compare, int little)
 	if (compare == 1)
 	{
 		while (data->la->next->num != little)
-			data->la = rra(data);
+				data->la = rra(data);
 		data->la = pb(data);
 	}
 	else if (compare == 0)
 	{
 		while (data->la->next->num != little)
-			data->la = ra(data);
+				data->la = ra(data);
 		data->la = pb(data);
 	}
 }
@@ -37,6 +37,9 @@ void	ft_make_list_right100(t_struct *data, int len)
 	i = ft_trie_100_b_biggest(data, big);
 	len = ft_len_listb(data);
 	len = len / 2;
+	//ft_printf("len = %d i = %d big = %d\n", len, i , big);
+	if (i == 0)
+		return ;
 	if (i > len)
 	{
 		len = ft_len_listb(data);
@@ -63,13 +66,16 @@ int	ft_trie_100_b_biggest(t_struct *data, int little)
 
 	i = 0;
 	lb = data->lb->next;
-	while (lb)
+	//ft_printf("little %d\n", little);
+	while (lb->next)
 	{
 		if (little <= lb->num)
 			return (i);
 		lb = lb->next;
 		i++;
 	}
+	if (lb->num >= little)
+		return (i);
 	return (-1);
 }
 

@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_algo_10helper.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: landeo <landeo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 19:12:18 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/19 13:22:05 by landeo           ###   ########.fr       */
+/*   Updated: 2023/06/17 19:23:11 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 void	ft_10_action(t_list_a *tmp, t_struct *data)
 {
@@ -50,18 +49,4 @@ void	ft_10_action_helper(t_list_a *tmp, t_struct *data, int num)
 		}
 		data->la = pb(data);
 	}
-}
-
-bool	ft_checker_valid(t_struct *data)
-{
-	t_list_a *la;
-
-	la = data->la->next;
-	while (la->next)
-	{
-		if (la->num > la->next->num)
-			return (1);
-		la = la->next;
-	}
-	return (0);
 }

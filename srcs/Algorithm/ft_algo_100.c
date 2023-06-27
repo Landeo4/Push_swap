@@ -6,7 +6,7 @@
 /*   By: tpotilli <tpotilli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:19:06 by tpotilli          #+#    #+#             */
-/*   Updated: 2023/06/20 18:35:03 by tpotilli         ###   ########.fr       */
+/*   Updated: 2023/06/27 20:30:24 by tpotilli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,9 @@ void	ft_algo_100_manager(t_struct *data, int argc)
 			i++;
 			ft_chunk(data, moyennech1, first);
 			first++;
+			//ft_print_listb(data);
+			if (ft_len_lista(data) == 0)
+				break ;
 		}
 		i = 0;
 		token++;
@@ -54,6 +57,7 @@ int	ft_algo100manager_helper2(t_struct *data)
 
 	len = ft_len_listb(data);
 	ft_make_list_right100(data, len);
+	//ft_print_lista(data);
 	while (len > 0)
 	{
 		data->lb = pa(data);
@@ -82,9 +86,9 @@ int	ft_chunk(t_struct *data, int moyenne, int token)
 	t_list_a	*la;
 
 	la = data->la->next;
-	littlech1 = ft_found_pos_little_first_part(data, moyenne, la);
-	littlech2 = ft_found_pos_little_last_part(data, moyenne, la);
-	if (littlech1 >= littlech2)
+	littlech1 = ft_found_pos_little_first_part(data, moyenne);
+	littlech2 = ft_found_pos_little_last_part(data, moyenne);
+	if (littlech1 <= littlech2 && littlech1 != -1)
 		compare = 0;
 	else
 		compare = 1;
@@ -92,9 +96,34 @@ int	ft_chunk(t_struct *data, int moyenne, int token)
 		little = ft_found_little_100_75(data, littlech2, la);
 	else if (compare == 0)
 		little = ft_found_little_100_25(data, littlech1, moyenne);
+	//ft_printf("littlech2 %d\n", littlech2);
 	if (token < 2)
 	{
 		ft_chunk_helper(data, compare, little);
+		return (0);
+	}
+	//ft_printf("littlech1 %d, littlech2 %d, lit %d compare %d et moyenne %d\n", littlech1, littlech2, little, compare, moyenne);
+	//ft_printf("======");
+	/*ft_print_lista(data);
+	ft_printf("======");*/
+	if (compare == 1 && littlech2 > 25)
+	{
+		//ft_printf("coucou\n");
+		little = data->la->next->num;
+		//ft_printf("la %d\n", data->la->next->num);
+		littlech1 = ft_trie_100_b_little(data, little);
+		littlech2 = ft_trie_100_b_biggest(data, little);
+		ft_100_swap_manager(data, littlech1, littlech2, moyenne);
+		return (0);
+	}
+	else if (compare == 0 && littlech1 > 25)
+	{
+		//ft_printf("coucou\n");
+		little = data->la->next->num;
+		//ft_printf("la %d\n", data->la->next->num);
+		littlech1 = ft_trie_100_b_little(data, little);
+		littlech2 = ft_trie_100_b_biggest(data, little);
+		ft_100_swap_manager(data, littlech1, littlech2, moyenne);
 		return (0);
 	}
 	ft_take_25_algo100(data, compare, little, moyenne);
